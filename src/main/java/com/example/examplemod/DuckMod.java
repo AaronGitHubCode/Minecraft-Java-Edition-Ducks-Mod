@@ -40,7 +40,6 @@ public final class DuckMod {
     private static final RegistryObject<Item> DUCK_FOOD_ITEM_NO_BURNED = ITEMS.register("duck_food", () -> new Item(
             new Item.Properties()
                     .stacksTo(DEFAULT_STACK_SIZE)
-                    .overrideDescription("")
                     .attributes(ItemAttributeModifiers.builder()
                             .build())
                     .food(new FoodProperties.Builder()
@@ -52,7 +51,6 @@ public final class DuckMod {
     private static final RegistryObject<Item> DUCK_FOOD_ITEM_BURNED = ITEMS.register("duck_food_burn", () -> new Item(
             new Item.Properties()
                     .stacksTo(DEFAULT_STACK_SIZE)
-                    .overrideDescription("")
                     .attributes(ItemAttributeModifiers.builder()
                             .build())
                     .food(new FoodProperties.Builder()
@@ -67,6 +65,7 @@ public final class DuckMod {
     private void setup(final FMLJavaModLoadingContext context) {
         final var modEventBus = context.getModEventBus();
         modEventBus.addListener(this::addCreative);
+        ITEMS.register(modEventBus);
     }
 
     // Añadir huevo de generación a la sección de huevos de generación.
