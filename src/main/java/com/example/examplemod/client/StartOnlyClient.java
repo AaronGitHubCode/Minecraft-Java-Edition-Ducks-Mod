@@ -1,4 +1,7 @@
 package com.example.examplemod.client;
 
-public class StartOnlyClient {
+public final class StartOnlyClient {
+    public StartOnlyClient() {
+
+    }
 }
